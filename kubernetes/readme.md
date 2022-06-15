@@ -155,17 +155,17 @@ kubectl apply -f deployment.yaml
 kubectl apply -f ../currency-conversion/deployment.yaml 
 ```
 
-Kubernetes framework consists of pods, replicasets, deployments and services. 
+### Kubernetes framework consists of pods, replicasets, deployments and services. 
 
-Kubernetes Architecture : Cluster consists of Master Node + worker node.
-Master Node -> manages cluster, it contains
-Distributed Databse(etcd) containing the configuration changes for desired states.
-API server(kube-apiserver), kubectl talks to apiserver to set the commands
-Scheduler(kube-scheduler) : scheduling the pods on nodes as per config
-Controller Manager (kube-cotroller-manager) ensures the actual state of the cluster matches the desired state, and manages overrall health of the cluster.
+### Kubernetes Architecture : Cluster consists of Master Node + worker node.
+- Master Node -> manages cluster, it contains
+- Distributed Databse(etcd) containing the configuration changes for desired states.
+- API server(kube-apiserver), kubectl talks to apiserver to set the commands
+- Scheduler(kube-scheduler) : scheduling the pods on nodes as per config
+- Controller Manager (kube-cotroller-manager) ensures the actual state of the cluster matches the desired state, and manages overrall health of the cluster.
 
-Worker node -> manages user apps
-Node Agent(kubelet) monitors the node and communicate it to master node(controller manager)
-Networking component(kube-proxy) helps in exposing services around your nodes and pods
-Container runtime(CRI) to run the containers, example is Docker runtine.
-PODS runnings the containers.
+- Worker node -> manages user apps, it contains
+- Node Agent(kubelet) monitors the node and communicate it to master node(controller manager)
+- Networking component(kube-proxy) helps in exposing services around your nodes and pods
+- Container runtime(CRI) to run the containers, example is Docker runtine.
+- PODS runnings the containers.
