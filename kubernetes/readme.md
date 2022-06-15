@@ -47,8 +47,8 @@
 ```
 docker run -p 8080:8080 in28min/hello-world-rest-api:0.0.1.RELEASE
 
-kubectl create deployment hello-world-rest-api --image=in28min/hello-world-rest-api:0.0.1.RELEASE
-kubectl expose deployment hello-world-rest-api --type=LoadBalancer --port=8080
+kubectl create deployment hello-world-rest-api --image=in28min/hello-world-rest-api:0.0.1.RELEASE  //creates the pod, replicaset, deployment
+kubectl expose deployment hello-world-rest-api --type=LoadBalancer --port=8080   //creates the service
 kubectl scale deployment hello-world-rest-api --replicas=3
 kubectl delete pod hello-world-rest-api-58ff5dd898-62l9d
 kubectl autoscale deployment hello-world-rest-api --max=10 --cpu-percent=70
