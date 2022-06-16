@@ -153,6 +153,10 @@ kubectl get all
 
 kubectl apply -f deployment.yaml 
 kubectl apply -f ../currency-conversion/deployment.yaml 
+
+kubectl apply -f 00-configmap-currency-conversion.yaml
+kubectl get configMaps
+kubectl describe configmap currency-conversion-confirm-map
 ```
 
 ### Kubernetes framework consists of pods, replicasets, deployments and services. 
