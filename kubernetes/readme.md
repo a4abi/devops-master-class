@@ -157,12 +157,15 @@ kubectl apply -f ../currency-conversion/deployment.yaml
 kubectl apply -f 00-configmap-currency-conversion.yaml
 kubectl get configMaps
 kubectl describe configmap currency-conversion-confirm-map
+
+kubectl apply -f ingress.yaml
 ```
 
 ### Kubernetes framework consists of pods, replicasets, deployments and services. 
 - pods contain one or more containers running user apps. each of the pods gets a replicaset which indicates number of times each pod is replicated(for load balancing). every new deployment triggers a creation of new repliaca set with new deployment version and slowly deletes pods from the older version of replica set as new pods from new replica set gets created. 
 - we get Service discovery and DNS for free from kubernetes, whenever a service is started in a cluster, it gets info of all the other services running as environment variable inside the service with name as (SERVICENAME_SERVICE_HOST), we can also assign this new environment variable with default DNS name and reference the DNS name instead too, that way, kubernetes resolves these DNS names to service addresses.
 - kubernetes also helps us with configuration management between different environments like dev, staging and production
+- We can set the service to be as type as LoadBalancer then we create a LB per service deployed, instead if we make it as a type of NodePort and create an ingress which acts as a gateway to route the request to appropriate service. Ingress also create a single LB to route to different services based on ingress.yaml configurations. (nodeport means exposing a port on a node in the cluster for the service) 
 
 ### Kubernetes Architecture : Cluster consists of Master Node + worker node.
 - Master Node -> manages cluster, it contains
