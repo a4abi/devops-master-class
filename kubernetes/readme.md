@@ -156,6 +156,7 @@ kubectl apply -f ../currency-conversion/deployment.yaml
 ```
 
 ### Kubernetes framework consists of pods, replicasets, deployments and services. 
+- pods contain one or more containers running user apps. each of the pods gets a replicaset which indicates number of times each pod is replicated(for load balancing). every new deployment triggers a creation of new repliaca set with new deployment version and slowly deletes pods from the older version of replica set as new pods from new replica set gets created. 
 
 ### Kubernetes Architecture : Cluster consists of Master Node + worker node.
 - Master Node -> manages cluster, it contains
