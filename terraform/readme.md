@@ -51,7 +51,7 @@
 brew install terraform
 terraform --version
 terraform version
-terraform init
+terraform init     //first command to run in any new folder, this downloads all the providers
 export AWS_ACCESS_KEY_ID=*******
 export AWS_SECRET_ACCESS_KEY=*********
 terraform plan
@@ -63,7 +63,7 @@ terraform apply -target="aws_iam_user.my_iam_user"
 terraform destroy
 terraform validate
 terraform fmt
-terraform show
+terraform show  // shows human readable form of file.tfstate (terraform state file)
 export TF_VAR_iam_user_name_prefix = FROM_ENV_VARIABLE_IAM_PREFIX
 export TF_VAR_iam_user_name_prefix=FROM_ENV_VARIABLE_IAM_PREFIX
 terraform plan -refresh=false -var="iam_user_name_prefix=VALUE_FROM_COMMAND_LINE"
