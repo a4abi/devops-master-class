@@ -77,3 +77,6 @@ terraform workspace select default
 terraform workspace list
 terraform workspace select prod-env
 ```
+
+
+## Terraform operates between 3 states, Desired,Known and Actual state. state we update in .tf file will be Desired state, state currently in the remote provider is the actual state. When we do Terraform apply *.tf file, terraform goes to renote provider,gets the state from remote, creates a *.tfstate file in same folder whcich is going to hold the last KNOWN state at remote. then it compares the .tf file with .tfstate file to check what changed, meaning we check the difference with desired to known state to compute difference. then updates the state at remote to desired state from *.tf file and updates the .tfstate file. it also backs up the old .tfstate file to .tfstate_backup. this .tfstate file is essential as it contains the mapping to terraform variable names to provider variable names. 
